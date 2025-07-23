@@ -22,26 +22,38 @@ git clone https://github.com/StevenValenciaIT/port-scanner.git
 cd port-scanner
 ```
 
-## Run the script
+### 2. Run the script
 
 ```bash
 python port_scanner.py
 ```
 
-Then follow the prompts: 
-- Enter the targer IP address
-- Enter the port range to scan
+### 3. The default scan targets 127.0.0.1 (localhost) and ports 1 through 1024. You can modify the script to scan other IP addresses or port ranges.
 
 ## Example Output
-``` pgsqql
-Enter the IP address to scan: 192.168.1.1
-Enter the starting port: 20
-Enter the ending port: 25
+``` console
+Scanning 127.0.0.1 from ports 1-1024...
 
-[+] Scanning 192.168.1.1 from port 20 to 25...
-[+] Port 22 is OPEN
-[+] Port 23 is OPEN
-[-] Port 24 is CLOSED
-[-] Port 25 is CLOSED
+[+] 127.0.0.1:22 is OPEN
+[+] 127.0.0.1:80 is OPEN
+...
+Scan results saved to scan_results.txt
 ```
+## What I Learned
+Using Python's socket module for network programming
 
+- How TCP port scanning works
+
+- Writing and managing log files
+
+- Best practices for resource management using context managers (with statements)
+
+## Disclaimer
+This tool is for educational purposes only. Do not scan networks or systems without proper authorization.
+
+## Future Improvements
+- Add multithreading for faster scanning
+
+- Add command-line arguments for IP and port range input
+
+- Implement banner grabbing to identify services
